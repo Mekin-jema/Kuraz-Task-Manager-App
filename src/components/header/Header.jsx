@@ -1,22 +1,31 @@
-import React from 'react';
-import { Home, Info } from 'lucide-react';
+// src/components/Header.jsx
 import { Link } from 'react-router-dom';
+import { Home, Info } from 'lucide-react';
+import React from 'react';
 
 const Header = () => {
     return (
-        <header className="bg-blue-600 text-white p-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center">
+        <header className="bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <h1 className="text-2xl font-bold">Task Manager</h1>
                 <nav>
-                    <ul className="flex space-x-4">
+                    <ul className="flex space-x-6">
                         <li>
-                            <Link to="/" className="flex items-center hover:underline">
-                                <Home className="mr-1" size={20} /> Home
+                            <Link
+                                to="/"
+                                className="flex items-center hover:underline transition-all"
+                            >
+                                <Home className="mr-1" size={20} />
+                                <span>Home</span>
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about" className="flex items-center hover:underline">
-                                <Info className="mr-1" size={20} /> About
+                            <Link
+                                to="/about"
+                                className="flex items-center hover:underline transition-all"
+                            >
+                                <Info className="mr-1" size={20} />
+                                <span>About</span>
                             </Link>
                         </li>
                     </ul>
