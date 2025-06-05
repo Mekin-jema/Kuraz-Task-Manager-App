@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import AddTask from '../components/AddTask/AddTask';
+import TaskItem from '../components/TaskList/TaskItem';
+import Header from '../components/header/Header';
 
 
 const initialTasks = [
@@ -6,17 +9,14 @@ const initialTasks = [
     { id: 2, title: 'Read a book', completed: true },
 ];
 
-function Task() {
+const HomePage = () => {
     const [tasks, setTasks] = useState(initialTasks);
-    const [newTask, setNewTask] = useState('');
 
-    const addTask = () => {
-        if (!newTask.trim()) return;
+    const addTask = (title) => {
         setTasks([
             ...tasks,
-            { id: Date.now(), title: newTask, completed: false },
+            { id: Date.now(), title, completed: false },
         ]);
-        setNewTask('');
     };
 
     const toggleComplete = (id) => {
@@ -30,39 +30,18 @@ function Task() {
     };
 
     return (
-        <div className="p-6 max-w-md mx-auto">
-            <h1 className="text-2xl font-bold mb-4">Task Manager</h1>
-
-            <div className="flex gap-2 mb-4">
-                <input
-                    className="border p-2 flex-1"
-                    value={newTask}
-                    onChange={(e) => setNewTask(e.target.value)}
-                    placeholder="Add new task"
+        <div className="min-h-screen bg-gray-50">
+            <Header />
+            <main className="container mx-auto p-4 max-w-2xl">
+                <AddTask onAddTask={addTask} />
+                <TaskItem
+                    tasks={tasks}
+                    onToggleComplete={toggleComplete}
+                    onDelete={deleteTask}
                 />
-                <button onClick={addTask} className="bg-blue-500 text-white px-4 py-2">Add</button>
-            </div>
-
-            <ul>
-                {tasks.map(task => (
-                    <li key={task.id} className="flex justify-between items-center mb-2">
-                        <span
-                            onClick={() => toggleComplete(task.id)}
-                            className={`cursor-pointer ${task.completed ? 'line-through text-gray-500' : ''}`}
-                        >
-                            {task.title}
-                        </span>
-                        <button
-                            onClick={() => deleteTask(task.id)}
-                            className="text-red-500 hover:underline"
-                        >
-                            Delete
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            </main>
         </div>
     );
-}
+};
 
-export default Task;
+export default HomePage;
