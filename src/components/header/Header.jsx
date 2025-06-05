@@ -5,9 +5,13 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <header className="bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Task Manager</h1>
+        <header >
+
+            <div className="container relative mx-auto px-4 py-4 flex justify-between items-center bg-[#86BC47] min-h-[70px]">
+                <div className="absolute left-0 top-0 rounded-tr-md bg-white">
+                    <img src="logo.png" alt="logo image" />
+
+                </div>
                 <nav>
                     <ul className="flex space-x-6">
                         <li>
