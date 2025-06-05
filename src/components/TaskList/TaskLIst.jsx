@@ -1,9 +1,9 @@
+// src/components/TaskList.jsx
 import { ClipboardList } from 'lucide-react';
+import TaskItem from './TaskItem';
 import React from 'react';
-import TaskItem from './TaskLIst';
 
-const TaskList = ({ tasks = [], onToggleComplete, onDelete }) => {
-    console.log('Rendering TaskList with tasks:', tasks);
+const TaskList = ({ tasks, onToggleComplete, onDelete }) => {
     return (
         <div>
             <div className="flex items-center mb-4">
