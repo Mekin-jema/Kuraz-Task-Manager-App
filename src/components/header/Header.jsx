@@ -7,9 +7,13 @@ const Header = () => {
     return (
         <header >
 
-            <div className="container relative mx-auto px-4 py-4 flex justify-between items-center bg-[#86BC47] min-h-[70px]">
-                <div className="absolute left-0 top-0 rounded-tr-md bg-white">
-                    <img src="logo.png" alt="logo image" />
+            <div className="container relative mx-auto  py-4 flex justify-between items-center bg-[#86BC47] min-h-[85px]">
+                <div className="absolute left-0 top-0 bottom-0 rounded-tr-lg bg-white">
+                    <img src="logo.png" alt="logo image" className='w-[233px]' />
+
+                </div>
+                <div className="absolute right-0 top-0 bottom-0 rounded-tl-lg bg-white">
+                    <img src="logo2.png" alt="logo image" className='w-[233px]' />
 
                 </div>
                 <nav>

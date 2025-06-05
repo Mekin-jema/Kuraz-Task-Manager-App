@@ -1,12 +1,80 @@
-# React + Vite
+# Task Manager Frontend Application - README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a simple task manager frontend application built for the Kuraz Internship Entrance Challenge. The application allows users to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View a list of tasks
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) (JavaScript library for building user interfaces)
+- [Tailwind CSS](https://tailwindcss.com/) (Utility-first CSS framework)
+- [React Icons](https://react-icons.github.io/react-icons/) (Icon library)
+
+## Features
+
+- Clean, responsive UI
+- Task list display with visual distinction between completed and pending tasks
+- Add new tasks with form validation
+- Toggle task completion status
+- Delete tasks with confirmation
+- Local state management (no backend required)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   https://github.com/Mekin-jema/Kuraz-Task-Manager-App
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd client
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+1. The application will automatically open in your default browser at `http://localhost:3000`
+2. To add a new task:
+   - Type the task title in the input field
+   - Press Enter or click the "Add" button
+3. To mark a task as completed:
+   - Click the checkbox next to the task
+4. To delete a task:
+   - Click the trash can icon next to the task
+   - Confirm the deletion in the popup
+
+## Customization
+
+You can modify the initial task list by editing the `tasks` array in `App.js`:
+
+```javascript
+const initialTasks = [
+  { id: 1, title: "Buy groceries", completed: false },
+  { id: 2, title: "Read a book", completed: true },
+];
+```
+
+## Future Improvements
+
+- Add task filtering (completed/pending)
+- Implement task editing functionality
+- Add due dates and priorities
+- Persist tasks to localStorage
+
+## Screenshots
+
+## License
+
+This project is open-source and available under the MIT License.
