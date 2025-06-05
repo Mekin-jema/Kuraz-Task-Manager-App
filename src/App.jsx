@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { StrictMode } from 'react' // ✅ add React import
+
 
 const App = () => {
   return (
